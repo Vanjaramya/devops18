@@ -24,5 +24,12 @@ status = "Enabled"
 }
 
 
+terraform {
+backend "s3" {
+region = "us-east-1"
+bucket = "kalki.2078.ram"
+key = "prod/terraform.tfstate"
+}
+}
 
 
