@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "one" {
-  bucket = "kpractice.2078.ram"
+  bucket = "kalki.2078.ram"
 }
 
 resource "aws_s3_bucket_ownership_controls" "two" {
