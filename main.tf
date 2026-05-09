@@ -1,9 +1,9 @@
 resource "aws_launch_template" "web_server_as" {
     name = "myproject"
-    image_id           = "ami-02dfbd4ff395f2a1b"
+    image_id           = "ami-0a59ec92177ec3fad"
     vpc_security_group_ids = [aws_security_group.web_server.id]
     instance_type = "t3.micro"
-    key_name = "march-kp"
+    key_name = "mynewkeypair"
     tags = {
         Name = "DevOps"
     }
@@ -15,7 +15,7 @@ resource "aws_launch_template" "web_server_as" {
   resource "aws_elb" "web_server_lb"{
      name = "web-server-lb"
      security_groups = [aws_security_group.web_server.id]
-     subnets = ["subnet-05b5c04b3e4f5fc97", "subnet-078eaa4691fce41d5"]
+     subnets = ["subnet-0a3292a5a99ff0074", "subnet-0b19702f1051ec7eb"]
      listener {
       instance_port     = 8000
       instance_protocol = "http"
